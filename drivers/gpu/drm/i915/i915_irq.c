@@ -1505,7 +1505,7 @@ gen8_cs_irq_handler(struct intel_engine_cs *engine, u32 iir)
 	}
 
 	if (iir & GT_RENDER_PIPECTL_NOTIFY_INTERRUPT && i915_modparams.enable_ipts)
-		intel_ipts_notify_complete();
+		ipts_notify_complete();
 
 	if (tasklet)
 		tasklet_hi_schedule(&engine->execlists.tasklet);
