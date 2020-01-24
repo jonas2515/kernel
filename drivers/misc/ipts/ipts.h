@@ -75,7 +75,7 @@ struct ipts_info {
 	enum touch_sensor_mode sensor_mode;
 	struct touch_sensor_get_device_info_rsp_data device_info;
 	struct ipts_resource resource;
-	u8 hid_input_report[HID_MAX_BUFFER_SIZE];
+	u8 hid_input_report[HID_MAX_BUFFER_SIZE - 2];
 	int num_of_parallel_data_buffers;
 	bool hid_desc_ready;
 
