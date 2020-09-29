@@ -5,16 +5,15 @@
 .. |ssam_cdev_request| replace:: :c:type:`struct ssam_cdev_request <ssam_cdev_request>`
 .. |ssam_request_flags| replace:: :c:type:`enum ssam_request_flags <ssam_request_flags>`
 
-=======================
-User-Space EC Interface
-=======================
+==============================
+User-Space EC Interface (cdev)
+==============================
 
-The ``surface_aggregator_debugfs`` module provides a misc-device for the
-SSAM controller to allow for a (more or less) direct connection from
-userspace to the SAM EC. It is intended to be used for development and
-debugging, and therefore should not be used or relied upon in any other way.
-Note that this module is not loaded automatically, but instead must be
-loaded manually.
+The ``surface_aggregator_cdev`` module provides a misc-device for the SSAM
+controller to allow for a (more or less) direct connection from userspace to
+the SAM EC. It is intended to be used for development and debugging, and
+therefore should not be used or relied upon in any other way. Note that this
+module is not loaded automatically, but instead must be loaded manually.
 
 The provided interface is accessible through the ``/dev/surface/aggregator``
 device-file. All functionality of this interface is provided via IOCTLs.

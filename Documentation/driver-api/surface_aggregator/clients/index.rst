@@ -10,7 +10,7 @@ This is the documentation for client drivers themselves. Refer to
 .. toctree::
    :maxdepth: 1
 
-   dbgdev
+   cdev
    san
 
 .. only::  subproject and html
