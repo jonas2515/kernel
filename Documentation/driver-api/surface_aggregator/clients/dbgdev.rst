@@ -5,9 +5,9 @@
 .. |ssam_cdev_request| replace:: :c:type:`struct ssam_cdev_request <ssam_cdev_request>`
 .. |ssam_request_flags| replace:: :c:type:`enum ssam_request_flags <ssam_request_flags>`
 
-==========================
-SSAM Misc-Device Interface
-==========================
+=======================
+User-Space EC Interface
+=======================
 
 The ``surface_aggregator_debugfs`` module provides a misc-device for the
 SSAM controller to allow for a (more or less) direct connection from
@@ -18,6 +18,8 @@ loaded manually.
 
 The provided interface is accessible through the ``/dev/surface/aggregator``
 device-file. All functionality of this interface is provided via IOCTLs.
+These IOCTLs and their respective input/output parameter structs are defined in
+``include/uapi/linux/surface_aggregator/cdev.h``.
 
 
 Controller IOCTLs
@@ -80,5 +82,5 @@ case the actual execution of the request failed after it has been submitted.
 
 A full definition of the argument struct is provided below:
 
-.. kernel-doc:: drivers/misc/surface_aggregator/clients/surface_aggregator_debugfs.c
+.. kernel-doc:: include/uapi/linux/surface_aggregator/cdev.h
    :functions: ssam_cdev_request
