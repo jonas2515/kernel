@@ -54,7 +54,6 @@ config SURFACE_AGGREGATOR_ERROR_INJECTION
 	bool "Surface System Aggregator Module Error Injection Capabilities"
 	depends on SURFACE_AGGREGATOR
 	depends on FUNCTION_ERROR_INJECTION
-	default n
 	help
 	  Provides error-injection capabilities for the Surface System
 	  Aggregator Module subsystem and Surface Serial Hub driver.
