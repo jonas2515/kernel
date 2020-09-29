@@ -16,7 +16,7 @@ debugging, and therefore should not be used or relied upon in any other way.
 Note that this module is not loaded automatically, but instead must be
 loaded manually.
 
-The provided interface is accessible through the ``/dev/surface_aggregator``
+The provided interface is accessible through the ``/dev/surface/aggregator``
 device-file. All functionality of this interface is provided via IOCTLs.
 
 
