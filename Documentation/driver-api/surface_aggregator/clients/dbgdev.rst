@@ -2,7 +2,7 @@
 
 .. |u8| replace:: :c:type:`u8 <u8>`
 .. |u16| replace:: :c:type:`u16 <u16>`
-.. |ssam_dbg_request| replace:: :c:type:`struct ssam_dbg_request <ssam_dbg_request>`
+.. |ssam_cdev_request| replace:: :c:type:`struct ssam_cdev_request <ssam_cdev_request>`
 .. |ssam_request_flags| replace:: :c:type:`enum ssam_request_flags <ssam_request_flags>`
 
 ==========================
@@ -36,7 +36,7 @@ The following IOCTLs are provided:
      - Description
 
    * - ``0xA5``
-     - ``0``
+     - ``1``
      - ``WR``
      - ``REQUEST``
      - Perform synchronous SAM request.
@@ -45,10 +45,10 @@ The following IOCTLs are provided:
 ``REQUEST``
 -----------
 
-Defined as ``_IOWR(0xA5, 0, struct ssam_dbg_request)``.
+Defined as ``_IOWR(0xA5, 1, struct ssam_cdev_request)``.
 
 Executes a synchronous SAM request. The request specification is passed in
-as argument of type |ssam_dbg_request|, which is then written to/modified
+as argument of type |ssam_cdev_request|, which is then written to/modified
 by the IOCTL to return status and result of the request.
 
 Request payload data must be allocated separately and is passed in via the
@@ -81,4 +81,4 @@ case the actual execution of the request failed after it has been submitted.
 A full definition of the argument struct is provided below:
 
 .. kernel-doc:: drivers/misc/surface_aggregator/clients/surface_aggregator_debugfs.c
-   :functions: ssam_dbg_request
+   :functions: ssam_cdev_request
