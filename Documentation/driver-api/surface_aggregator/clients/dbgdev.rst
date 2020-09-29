@@ -40,58 +40,15 @@ The following IOCTLs are provided:
 
    * - ``0xA5``
      - ``0``
-     - ``R``
-     - ``GETVERSION``
-     - Get DebugFS controller interface version.
-
-   * - ``0xA5``
-     - ``1``
      - ``WR``
      - ``REQUEST``
      - Perform synchronous SAM request.
 
 
-``GETVERSION``
---------------
-
-Defined as ``_IOR(0xA5, 0, __u32)``.
-
-Gets the current interface version. This should be used to check for changes
-in the interface and determine if certain functionality is available. While
-the interface should under normal circumstances kept backward compatible, as
-this is a debug interface, backwards compatibility is not guaranteed.
-
-The version number follows the semantic versioning scheme, roughly meaning
-that an increment in the highest non-zero version number signals a breaking
-change. It can be decomposed as follows:
-
-.. flat-table:: Version Number Format
-   :widths: 2 1 3
-   :header-rows: 1
-
-   * - Offset (bytes)
-     - Type
-     - Description
-
-   * - ``0``
-     - |u8|
-     - Major
-
-   * - ``1``
-     - |u8|
-     - Minor
-
-   * - ``2``
-     - |u16|
-     - Patch
-
-The interface version is currently ``0.1.0``, i.e. ``0x00010000``.
-
-
 ``REQUEST``
 -----------
 
-Defined as ``_IOWR(0xA5, 1, struct ssam_dbg_request)``.
+Defined as ``_IOWR(0xA5, 0, struct ssam_dbg_request)``.
 
 Executes a synchronous SAM request. The request specification is passed in
 as argument of type |ssam_dbg_request|, which is then written to/modified
