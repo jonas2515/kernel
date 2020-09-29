@@ -4,8 +4,6 @@
 config SURFACE_AGGREGATOR_DEBUGFS
 	tristate "Surface System Aggregator Module DebugFS interface"
 	depends on SURFACE_AGGREGATOR
-	depends on DEBUG_FS
-	default n
 	help
 	  Provides a DebugFS interface to the Surface System Aggregator Module
 	  (SSAM) controller.

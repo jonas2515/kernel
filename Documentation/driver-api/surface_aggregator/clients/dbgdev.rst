@@ -5,22 +5,19 @@
 .. |ssam_dbg_request| replace:: :c:type:`struct ssam_dbg_request <ssam_dbg_request>`
 .. |ssam_request_flags| replace:: :c:type:`enum ssam_request_flags <ssam_request_flags>`
 
-=======================================
-SSAM Debug Device and DebugFS Interface
-=======================================
+==========================
+SSAM Misc-Device Interface
+==========================
 
-The ``surface_aggregator_debugfs`` module provides a DebugFS interface for
-the SSAM controller to allow for a (more or less) direct connection from
+The ``surface_aggregator_debugfs`` module provides a misc-device for the
+SSAM controller to allow for a (more or less) direct connection from
 userspace to the SAM EC. It is intended to be used for development and
 debugging, and therefore should not be used or relied upon in any other way.
 Note that this module is not loaded automatically, but instead must be
 loaded manually.
 
-The provided interface is accessible through the
-``surface_aggregator/controller`` device-file in debugfs, so, if the
-conventional mount path is being used,
-``/sys/kernel/debug/surface_aggregator/controller``. All functionality of
-this interface is provided via IOCTLs.
+The provided interface is accessible through the ``/dev/surface_aggregator``
+device-file. All functionality of this interface is provided via IOCTLs.
 
 
 Controller IOCTLs
